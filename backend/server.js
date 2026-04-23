@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api/auth", authRoutes);
-app.use("/api/books", bookRoutes);
+app.use(`${process.env.REACT_APP_API_URL}/api/books`, bookRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api", issueRoutes);
 
